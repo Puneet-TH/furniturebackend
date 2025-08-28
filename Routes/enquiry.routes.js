@@ -1,5 +1,5 @@
 import express from 'express'
-import { getEnquiries, makeEnquiry } from '../controller/Enquiry.controller.js';
+import { getEnquiries, makeEnquiry } from '../Controller/Enquiry.controller.js';
 import isAuthenticated from '../Middleware/isAuthenticated.js';
 const router = express.Router();
 
