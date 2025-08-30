@@ -10,7 +10,7 @@ dotenv.config();
 dbConnect();
 const app = express();
 app.use(cors({
-  origin: "http://localhost:5173" || process.env.CORS_ORIGIN,   
+  origin: "https://furniture-six-hazel.vercel.app" || process.env.CORS_ORIGIN,   
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
