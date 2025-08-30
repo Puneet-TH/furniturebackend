@@ -40,8 +40,8 @@ export const signup = async (req,res) => {
         res.cookie("token", token, {
             maxAge: 1 * 24 * 60 * 60 * 1000,
             httpOnly: true,
-            sameSite: "strict",
-            secure: process.env.NODE_ENV === "production",
+            sameSite: "None",
+            secure: true,
         });
 
         return res.status(201).json({

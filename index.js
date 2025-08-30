@@ -10,11 +10,19 @@ dotenv.config();
 dbConnect();
 const app = express();
 app.use(cors({
-  origin: "https://furniture-six-hazel.vercel.app" || process.env.CORS_ORIGIN,   
+  origin: process.env.CORS_ORIGIN || "https://furniture-six-hazel.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
+// When setting cookies (e.g., in login route), use options like:
+// res.cookie('token', token, {
+//   httpOnly: true,
+//   secure: true, // required for cross-site cookies
+//   sameSite: 'None', // required for cross-site cookies
+//   // ...other options
+// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
